@@ -1,4 +1,16 @@
-alter table level_details add primary key(P_ID,Dev_id,start_datetime);
+CREATE TABLE level_details(
+	p_id INT, 
+	Dev_ID VARCHAR(15),
+	start_datetime TIMESTAMP,
+	Stages_crossed INT,
+	Level INT,
+	Difficulty VARCHAR(15),
+	Kill_Count INT,
+	Headshots_Count INT,
+	Score INT,
+	Lives_Earned  INT,
+	FOREIGN KEY (p_id) REFERENCES player_details(p_id));
+	alter table level_details add primary key(P_ID,Dev_id,start_datetime);
 
 -- 1. Extract `p_id`, `Dev_ID`, `PName`, and `difficulty_level` of all players at Level 0.
 
